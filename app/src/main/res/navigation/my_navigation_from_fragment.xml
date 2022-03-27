@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/my_navigation_from_fragment"
+    app:startDestination="@id/splashFragment">
+
+    <fragment
+        android:id="@+id/showWallpapersFragment"
+        android:name="com.ir.a4kwallpapers.ShowWallpapersFragment"
+        android:label="fragment_show_wallpapers"
+        tools:layout="@layout/fragment_show_wallpapers" />
+    <fragment
+        android:id="@+id/menuFragment"
+        android:name="com.ir.a4kwallpapers.MenuFragment"
+        android:label="fragment_menu"
+        tools:layout="@layout/fragment_menu" >
+        <action
+            android:id="@+id/action_menuFragment_to_showWallpapersFragment"
+            app:destination="@id/showWallpapersFragment"
+            app:enterAnim="@anim/anim_enter"
+            app:popEnterAnim="@anim/anim_exit" />
+    </fragment>
+    <fragment
+        android:id="@+id/splashFragment"
+        android:name="com.ir.a4kwallpapers.SplashFragment"
+        android:label="fragment_splash"
+        tools:layout="@layout/fragment_splash" >
+        <action
+            android:id="@+id/action_splashFragment_to_menuFragment"
+            app:destination="@id/menuFragment"
+            app:enterAnim="@anim/anim_enter"
+            app:popEnterAnim="@anim/anim_exit"
+            app:popUpTo="@id/splashFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+</navigation>
